@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Popup</title>
+  <link rel="stylesheet" href="popup.css">
+  
+</head>
+<body>
+  
+  <div id="clock"></div>
+
+  <canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
+
+  <canvas id="nova" width="500" height="500" >cccc</canvas>
+
+  <div id="timedate">
+    <a id="mon">January</a>
+    <a id="d">1</a>,
+    <a id="y">0</a><br />
+    <a id="h">12</a> :
+    <a id="m">00</a>:
+    <a id="s">00</a>:
+    <a id="mi">000</a>
+  </div>
+
+  <div id="clocksimple">
+    <div class="outer-clock-face">
+      <div class="marking marking-one"></div>
+      <div class="marking marking-two"></div>
+      <div class="marking marking-three"></div>
+      <div class="marking marking-four"></div>
+      <div class="inner-clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="clockClean" id="clean">
+    <div class="wrap">
+      <span class="hour"></span>
+      <span class="minute"></span>
+      <span class="second"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <select name="clocks" id="select">
+    <option value="regular">Regular</option>
+    <option value="digital">Digital</option>
+    <option value="precise">Precise</option>
+    <option value="nova">Nova</option>
+    <option value="simple">Simple</option>
+    <option value="clean">Clean</option>
+  </select>
+
+</body>
+<script src="popup.js"></script>
+
+</html>

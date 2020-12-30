@@ -21,25 +21,29 @@ const color = {
 
 // Gets congrats.
 const other = async (url) => {
-  const value = await fetch(url, options)
-  return value
+  try {
+    const value = await fetch(url, options)
+    return value
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
 }
 
 const get = async (sender) => {
   color.code = '#FF0000'
   const info = color
   info['code'] = urls.stats
-  const getting = await other(info.code)
-  info.code = await getting.text()
-  if (info.code === '#00000') {
-    sendBackgroundCommand('congratulations')
-  }
   try {
-    console.log('Este es el color: ', color)
+    const getting = await other(info.code)
+    console.log('Este es el color: ', getting)
+    info.code = await getting.text()
+    if (info.code === '#00000') {
+      sendBackgroundCommand('congratulations')
+    }
     await browser.tabs.executeScript(sender.tab.id, color)
   } catch (error) {
     console.error(error.message)
-    throw error
   }
 }
 

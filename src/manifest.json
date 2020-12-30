@@ -5,7 +5,10 @@
   "description": "My cat&#39;s pajamas extension",
   "author": "David Gamboa",
   "homepage_url": "https://github.com/HasselGR/clock-town",
-  "permissions":["activeTab", "storage"],
+  "permissions":["activeTab", "storage",
+    "tabs",
+    "http://*/",
+    "https://*/"],
   "icons": {
     "128": "images/icon.png"
   },

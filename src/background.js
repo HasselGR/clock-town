@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill'
-import { sendBackgroundCommand } from './lib/common'
+import { sendBackgroundCommand, setStorage } from './lib/common'
 
 // Options
 const options = {
@@ -58,5 +58,6 @@ browser.runtime.onMessage.addListener((data, sender) => {
 })
 
 browser.runtime.onInstalled.addListener(() => {
-  browser.storage.local.set({ clock: 'regular' })
+  // browser.storage.local.set({ clock: 'regular' })
+  setStorage('clock', 'regular')
 })

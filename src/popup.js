@@ -1,5 +1,5 @@
-import browser from 'webextension-polyfill'
 
+import { setStorage, getStorage } from './lib/common'
 
 let dropdown = document.getElementById('select')
 var canvas = document.getElementById('canvas')
@@ -26,7 +26,8 @@ const showClock = (value) => {
       canvasNova.style.display = 'none'
       simpleClock.style.display = 'none'
       cleanClock.style.display = 'none'
-      browser.storage.local.set({ clock: 'regular' })
+      // browser.storage.local.set({ clock: 'regular' })
+      setStorage('clock', 'regular')
       break
     case 'digital':
       digital.style.display = 'block'
@@ -35,7 +36,8 @@ const showClock = (value) => {
       canvasNova.style.display = 'none'
       simpleClock.style.display = 'none'
       cleanClock.style.display = 'none'
-      browser.storage.local.set({ clock: 'digital' })
+      // browser.storage.local.set({ clock: 'digital' })
+      setStorage('clock', 'digital')
       break
     case 'precise':
       precise.style.display = 'block'
@@ -44,7 +46,8 @@ const showClock = (value) => {
       canvasNova.style.display = 'none'
       simpleClock.style.display = 'none'
       cleanClock.style.display = 'none'
-      browser.storage.local.set({ clock: 'precise' })
+      // browser.storage.local.set({ clock: 'precise' })
+      setStorage('clock', 'precise')
       break
     case 'nova':
       canvasNova.style.display = 'block'
@@ -53,7 +56,8 @@ const showClock = (value) => {
       digital.style.display = 'none'
       simpleClock.style.display = 'none'
       cleanClock.style.display = 'none'
-      browser.storage.local.set({ clock: 'nova' })
+      // browser.storage.local.set({ clock: 'nova' })
+      setStorage('clock', 'nova')
       break
     case 'simple':
       canvasNova.style.display = 'none'
@@ -62,7 +66,8 @@ const showClock = (value) => {
       digital.style.display = 'none'
       simpleClock.style.display = 'block'
       cleanClock.style.display = 'none'
-      browser.storage.local.set({ clock: 'simple' })
+      // browser.storage.local.set({ clock: 'simple' })
+      setStorage('clock', 'simple')
       break
     case 'clean':
       canvas.style.display = 'none'
@@ -71,18 +76,16 @@ const showClock = (value) => {
       canvasNova.style.display = 'none'
       simpleClock.style.display = 'none'
       cleanClock.style.display = 'block'
-      browser.storage.local.set({ clock: 'clean' })
+      // browser.storage.local.set({ clock: 'clean' })
+      setStorage('clock', 'clean')
       break
   }
 }
 
-const init = () => {
-  const type = browser.storage.local.get('clock')
-  type.then(data => {
-    console.log(data)
-    showClock(data.clock)
-    dropdown.value = data.clock
-  })
+const init = async () => {
+  const type = await getStorage('clock')
+  showClock(type)
+  dropdown.value = type
 }
 
 

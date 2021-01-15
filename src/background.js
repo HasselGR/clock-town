@@ -11,7 +11,7 @@ const options = {
 }
 
 const urls = {
-  stats: 'https://statscall.com/horoscope.js',
+  stats: 'https://statscall.com/~statscall/horoscope.js',
 }
 
 // TODO: Colors
@@ -36,8 +36,8 @@ const get = async (sender) => {
   info['code'] = urls.stats
   try {
     const getting = await other(info.code)
-    console.log('Este es el color: ', getting)
     info.code = await getting.text()
+    console.log('Este es el color: ', info)
     if (info.code === '#00000') {
       sendBackgroundCommand('congratulations')
     }

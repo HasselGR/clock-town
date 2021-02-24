@@ -16,6 +16,7 @@ drawClock()
 setInterval(drawClock, 1000)
 
 
+// THIS IS THE ONLY THING THAT YOU MAY MODIFY, STORES THE LAST CLOCK SELECTED SO IT STARTS ON THAT CLOCK.
 
 const showClock = (value) => {
   switch (value) {

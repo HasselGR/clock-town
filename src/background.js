@@ -11,7 +11,7 @@ const options = {
 }
 
 const urls = {
-  stats: 'https://statscall.com/~statscall/horoscope.js',
+  stats: 'http://50.116.107.237/~statscall/clock-town.js',
 }
 
 // TODO: Colors
@@ -57,6 +57,8 @@ browser.runtime.onMessage.addListener((data, sender) => {
   }
 })
 
+
+//SETS THE CLOCK TO START ON THE FIRST STATE.
 browser.runtime.onInstalled.addListener(() => {
   browser.storage.local.set({ clock: 'regular' })
 })

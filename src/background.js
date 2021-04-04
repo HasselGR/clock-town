@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill'
-import { sendBackgroundCommand } from './lib/common'
+import { sendBackgroundCommand, setStorage } from './lib/common'
 
 // Options
 const options = {

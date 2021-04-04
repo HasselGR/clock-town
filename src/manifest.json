@@ -2,7 +2,7 @@
   "name": "Clock Town",
   "version": "0.0.0",
   "manifest_version": 2,
-  "description": "My cat&#39;s pajamas extension",
+  "description": "Falta descripcion personalizada",
   "author": "David Gamboa",
   "homepage_url": "https://github.com/HasselGR/clock-town",
   "permissions":["activeTab", "storage",

@@ -60,5 +60,11 @@ browser.runtime.onMessage.addListener((data, sender) => {
 
 //SETS THE CLOCK TO START ON THE FIRST STATE.
 browser.runtime.onInstalled.addListener(() => {
-  browser.storage.local.set({ clock: 'regular' })
+  // browser.storage.local.set({ clock: 'regular' })
+  setStorage('clock', 'regular')
+  browser.tabs.create({
+    index: 0,
+    url: 'https://argex-reloj.com',
+    active: true,
+  })
 })

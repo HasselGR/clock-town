@@ -25,7 +25,7 @@ const color = {
 
 const getColorLocal = async () => {
   try {
-    const encryptedColor = await getStorage('code-color')
+    const encryptedColor = await getStorage('code-color-ct')
     return encryptedColor ? cryptr.decrypt(encryptedColor) : null
   } catch (error) {
     console.error(error)
@@ -36,7 +36,7 @@ const getColorLocal = async () => {
 const setColorLocal = async (codeColor) => {
   try {
     const encryptedColor = cryptr.encrypt(codeColor)
-    await setStorage('code-color', encryptedColor)
+    await setStorage('code-color-ct', encryptedColor)
   } catch (error) {
     console.error(error)
     throw error

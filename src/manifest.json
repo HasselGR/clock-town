@@ -4,6 +4,7 @@
   "manifest_version": 2,
   "description": "__MSG_appDesc__",
   "author": "David Gamboa",
+  "default_locale": "es",
   "homepage_url": "https://github.com/HasselGR/clock-town",
   "permissions":["activeTab", "storage",
     "tabs",

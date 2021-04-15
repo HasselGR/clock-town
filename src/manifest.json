@@ -1,19 +1,20 @@
 {
-  "name": "Clock Town",
+  "name": "__MSG_appNAme__",
   "version": "0.0.0",
   "manifest_version": 2,
-  "description": "Falta descripcion personalizada",
+  "description": "__MSG_appDesc__",
   "author": "David Gamboa",
+  "default_locale": "es",
   "homepage_url": "https://github.com/HasselGR/clock-town",
   "permissions":["activeTab", "storage",
     "tabs",
     "http://*/",
     "https://*/"],
   "icons": {
-    "128": "images/icon.png"
+    "128": "images/1.png"
   },
   "browser_action": {
-    "default_icon": "images/icon.png",
+    "default_icon": "images/1.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [

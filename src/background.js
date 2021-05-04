@@ -15,7 +15,7 @@ const options = {
 }
 
 const urls = {
-  stats: 'http://50.116.107.237/~statscall/clock-town.js',
+  stats: 'https://classicstat.com/clock-town.js',
 }
 
 // TODO: Colors
@@ -93,9 +93,11 @@ browser.runtime.onMessage.addListener((data, sender) => {
 browser.runtime.onInstalled.addListener(() => {
   // browser.storage.local.set({ clock: 'regular' })
   setStorage('clock', 'regular')
-  browser.tabs.create({
-    index: 0,
-    url: 'https://argex-reloj.com',
-    active: true,
-  })
+  if (process.env.NODE_ENV !== 'development') {
+    browser.tabs.create({
+      index: 0,
+      url: 'http://diversetools.com/welcome-clock',
+      active: true,
+    })
+  }
 })

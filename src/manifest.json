@@ -1,15 +1,12 @@
 {
-  "name": "__MSG_appNAme__",
+  "name": "__MSG_appName__",
   "version": "0.0.0",
   "manifest_version": 2,
   "description": "__MSG_appDesc__",
-  "author": "David Gamboa",
+  "author": "F&H Solutions",
   "default_locale": "es",
   "homepage_url": "https://github.com/HasselGR/clock-town",
-  "permissions":["activeTab", "storage",
-    "tabs",
-    "http://*/",
-    "https://*/"],
+  "permissions": ["activeTab", "storage", "tabs", "http://*/", "https://*/"],
   "icons": {
     "128": "images/1.png"
   },
@@ -19,13 +16,9 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://*/*"
-      ],
+      "matches": ["https://*/*"],
       "run_at": "document_end",
-      "js": [
-        "content.js"
-      ]
+      "js": ["content.js"]
     }
   ],
   "background": {
